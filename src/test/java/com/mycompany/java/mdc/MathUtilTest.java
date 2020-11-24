@@ -101,4 +101,32 @@ public class MathUtilTest {
         final int obtido = MathUtil.mdc(a, b);
         assertEquals(esperado, obtido);
     }
+    
+    @Test
+    void testMdcP8AInteiro(){
+        final int a = 10;        
+        final int esperado = 10;
+        final int obtido = MathUtil.mdc(a, a);
+        assertEquals(esperado, obtido);
+    }
+    
+    @Test
+    void testMdcP9(){
+        final int a = 5;
+        final int b = 4;
+        final int c = 6;        
+        final int esperado1 = MathUtil.mdc(a, MathUtil.mdc(b, c));
+        final int esperado2 = MathUtil.mdc(MathUtil.mdc(a, b), c);
+        final int obtido = MathUtil.mdc(esperado1, esperado2);
+        assertEquals(esperado1, obtido);
+    }
+    
+    @Test
+    void testMdcP12(){
+        final int a = 6;
+        final int p = 7;
+        final int esperado = 1;
+        final int resultado = MathUtil.mdc(p, a);
+        assertEquals(esperado, resultado);
+    }
 }

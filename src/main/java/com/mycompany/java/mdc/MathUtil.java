@@ -19,17 +19,17 @@ public class MathUtil {
         //propriedade 1
         if(b > 0 && a % b == 0){
             return b;
-        }
+        }     
         
         //propriedade 3
         if(b == 0){
             return Math.abs(a);
         }
         
-        //propriedade 5
-        if(a % b != 0){
+        //propriedade 5 e 12
+        if(a % b != 0 || a % a == 0){
             return 1;
-        }
+        }        
         
         return -1;
     }
